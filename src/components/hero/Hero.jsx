@@ -1,21 +1,48 @@
 import "./hero.scss"
+import { motion } from "framer-motion"
+
+const textVariants = {
+  initial: {
+    x: -500,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition:{
+      duration: 1,
+      staggerChildern: 0.1,
+    },
+  },
+  scrollButton:{
+    opacity:0,
+    y: 10,
+    transition:{
+      duration:2,
+      repeat: Infinity
+    }
+  },
+}
 
 const Hero = () => {
   return (
     <div className="hero">
-        <div className="textContainer">
             <div className="wrapper">
-            <h2>Harsh Bhadouriya</h2>
-            <h1>Software Developer</h1>
-            <div className="button">
-                <button>See the Latest Works</button>
-                <button>Contact Me</button>
-            </div>
-            <img src="/scroll.png" alt="" />
+            <motion.div className="textContainer" variants={textVariants} initial="initial" animate="animate">
+            <motion.h2 variants={textVariants}>HARSH BHADOURIYA</motion.h2>
+            <motion.h1 variants={textVariants}>Software Developer</motion.h1>
+            <motion.div variants={textVariants} className="buttons">
+                <motion.button variants={textVariants}>See the Latest Works</motion.button>
+                <motion.button variants={textVariants}>Contact Me</motion.button>
+            </motion.div>
+            <motion.img variants={textVariants} animate="scrollButton" src="/scroll.png" alt="" />
+            </motion.div>
         </div>
-     </div>
+        <div className="slidingTextContainer">
+          Let's code our way to the clouds! ☁️
+        </div>
       <div className="imageContainer">
-        <img src="/me4.png" alt="" />
+        <img src="/itachi-Photoroom.png" alt="" />
       </div>
     </div>
   )

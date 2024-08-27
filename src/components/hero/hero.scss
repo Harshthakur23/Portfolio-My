@@ -30,6 +30,7 @@
 
             .buttons{
                 button{
+                    
                padding: 20px;
                border: 1px solid white;
                border-radius: 10px;
@@ -61,8 +62,10 @@
     .slidingTextContainer{
         position: absolute;
         font-size: 50vh;
-        bottom: -120px;
+        bottom: -100px;
         white-space: nowrap;
         color: #6a3232bb;
+        width: 50%;
+        font-weight: bold;
     }
 }
